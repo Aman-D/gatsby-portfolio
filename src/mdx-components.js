@@ -6,5 +6,19 @@ import React from "react"
 import { Text } from "@chakra-ui/core"
 
 export const MDXComponents = {
-  h1: props => <Text fontSize="2xl">{props.children}</Text>,
+  h1: ({ children, ...rest }) => (
+    <Text
+      fontSize={["4xl", "5xl"]}
+      textShadow="md"
+      fontWeight="semibold"
+      {...rest}
+    >
+      {children}
+    </Text>
+  ),
+  p: ({ children, ...rest }) => (
+    <Text fontSize={["md", "xl"]} fontWeight="medium" {...rest}>
+      {children}
+    </Text>
+  ),
 }
