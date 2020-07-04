@@ -3,12 +3,13 @@ import { Flex } from "@chakra-ui/core"
 import { MDXProvider } from "@mdx-js/react"
 import { Text } from "@chakra-ui/core"
 
-const Banner = ({ children, ...rest }) => {
+const Banner = ({ children, display, ...rest }) => {
   return (
     <Flex
-      minH="100vh"
+      minH={display === "half" ? "50vh" : "100vh"}
       minW="100vw"
       alignItems="center"
+      justifyContent="center"
       flexDir={["column", "row"]}
       bg="primary.background"
       {...rest}
