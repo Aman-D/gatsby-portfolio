@@ -6,6 +6,7 @@ export const theme = {
     ...baseTheme.colors,
     primary: {
       background: "#183060",
+      lightBlack: "#413A42",
     },
   },
   fonts: {

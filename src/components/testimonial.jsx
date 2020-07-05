@@ -15,13 +15,13 @@ const Testimonial = ({ children, ...rest }) => {
         minW={["320 !important", "420px !important"]}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        whileHover={{ backgroundColor: "#413A42", color: "white" }}
         {...rest}
       >
         {children.map(({ props }, index) => {
           if (props.mdxType === "img") {
             return (
               <Image
+                key={index}
                 src={props.src}
                 size={20}
                 borderRadius="50%"
@@ -34,7 +34,7 @@ const Testimonial = ({ children, ...rest }) => {
 
           if (props.mdxType === "p") {
             return (
-              <Flex flexDirection="column" textAlign="center">
+              <Flex flexDirection="column" textAlign="center" key={index}>
                 <Text p={4}>
                   {name},{position}
                 </Text>
@@ -64,11 +64,10 @@ const Testimonial = ({ children, ...rest }) => {
   }
   return (
     <Box {...rest} position="relative">
-      {children.map(({ props }, index) => {
-        if (props.mdxType === "Box") {
-          console.log(index)
-          return (
-            <>
+      <>
+        {children.map(({ props }, index) => {
+          if (props.mdxType === "Box") {
+            return (
               <Card
                 display={tabIndex === index ? "flex" : "none"}
                 key={index}
@@ -77,36 +76,36 @@ const Testimonial = ({ children, ...rest }) => {
               >
                 {props.children}
               </Card>
-              <Box
-                as={MdNavigateBefore}
-                onClick={prev}
-                boxShadow="md"
-                boxSizing="content-box"
-                p={[1, 4]}
-                position="absolute"
-                top={["110%", "50%"]}
-                left={["10%", "-15%"]}
-                transform="translate(-15%,-50%)"
-                bg="#413A42"
-                color="white"
-              />
-              <Box
-                as={MdNavigateNext}
-                onClick={next}
-                boxShadow="md"
-                boxSizing="content-box"
-                p={[1, 4]}
-                position="absolute"
-                top={["110%", "50%"]}
-                right={["10%", "-15%"]}
-                transform="translate(15%,-50%)"
-                bg="#413A42"
-                color="white"
-              />
-            </>
-          )
-        }
-      })}
+            )
+          }
+        })}
+        <Box
+          as={MdNavigateBefore}
+          onClick={prev}
+          boxShadow="md"
+          boxSizing="content-box"
+          p={[1, 4]}
+          position="absolute"
+          top={["110%", "50%"]}
+          left={["10%", "-15%"]}
+          transform="translate(-15%,-50%)"
+          bg="#413A42"
+          color="white"
+        />
+        <Box
+          as={MdNavigateNext}
+          onClick={next}
+          boxShadow="md"
+          boxSizing="content-box"
+          p={[1, 4]}
+          position="absolute"
+          top={["110%", "50%"]}
+          right={["10%", "-15%"]}
+          transform="translate(15%,-50%)"
+          bg="#413A42"
+          color="white"
+        />
+      </>
     </Box>
   )
 }
