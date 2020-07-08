@@ -10,14 +10,15 @@ const Tag = ({ title, logo, ...rest }) => {
   return (
     <Flex
       alignItems="center"
-      bg="gray.400"
+      bg="gray.100"
       w="fit-content"
       px={2}
       py={1}
       my={5}
+      mx={2}
       {...rest}
     >
-      <Box as={Icons[logo]} mx={2} />
+      {logo && <Box as={Icons[logo]} mx={2} />}
       <Text>{title}</Text>
     </Flex>
   )
