@@ -36,28 +36,33 @@ const Experience = () => {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        border="1px solid black"
-        maxW={["90% !important", "80% !important"]}
       >
         <>
           {experience.map((exp, index) => (
             <MotionGrid
               templateColumns={["1fr", "2fr 1fr"]}
+              maxW={["320px !important", "80%  !important"]}
               gridGap={5}
               display={tabIndex === index ? "flex" : "none"}
               key={index}
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
+              drag="x"
+              onDrag={(event, info) => {
+                info && info.point.x < 0 ? next() : prev()
+              }}
+              dragConstraints={{ left: -1, right: 1 }}
               boxShadow="lg"
+              minH="430px"
             >
-              <Box w="100%" p={10}>
+              <Box w="100%" p={[5, 10]}>
                 <Text fontSize="2xl">{exp.title}</Text>
                 <Text fontSize="sm" my={1}>
                   {exp.startDate} - {exp.endDate}
                 </Text>
                 <Text fontSize="md">{exp.body}</Text>
                 <Divider bg="gray.100" />
-                <Flex>
+                <Flex flexWrap="wrap">
                   <Tag title="React" />
                   <Tag title="React" />
                   <Tag title="React" />
@@ -86,6 +91,7 @@ const Experience = () => {
             </MotionGrid>
           ))}
           <Box
+            display={["none", "block"]}
             as={MdNavigateBefore}
             onClick={prev}
             boxShadow="md"
@@ -99,6 +105,7 @@ const Experience = () => {
             color="white"
           />
           <Box
+            display={["none", "block"]}
             as={MdNavigateNext}
             onClick={next}
             boxShadow="md"
@@ -116,7 +123,25 @@ const Experience = () => {
     )
   }
 
-  return <Section />
+  return (
+    <Flex flexDir="column" align="center">
+      <Section />
+      <Flex>
+        {experience.map(({ id, index }) => (
+          <Box
+            key={id}
+            onClick={() => setIndex(id - 1)}
+            border={id - 1 === tabIndex ? "2px solid #000" : ""}
+            size={[3, 5]}
+            bg={id - 1 === tabIndex ? "blue.100" : "gray.100"}
+            borderRadius="50%"
+            m={4}
+            _hover={{ bg: "blue.300" }}
+          />
+        ))}
+      </Flex>
+    </Flex>
+  )
 }
 
 export default Experience

@@ -73,9 +73,9 @@ const WhyMe = ({ children, initial, ...rest }) => {
       {children.map(({ props: { mdxType, children, ...rest } }, index) => {
         if (mdxType === "WhyMeHead") {
           return (
-            <Text key={index} {...rest}>
+            <Box key={index} {...rest}>
               {children}
-            </Text>
+            </Box>
           )
         }
         if (mdxType === "Page") {

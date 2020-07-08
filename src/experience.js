@@ -1,5 +1,6 @@
 export const experience = [
   {
+    id: 1,
     title: "JAM Stack developer",
     startDate: "2019",
     endDate: "present",
@@ -12,6 +13,7 @@ export const experience = [
     companyUrl: "",
   },
   {
+    id: 2,
     title: "Head of Design And Development",
     startDate: "2019, Dec",
     endDate: "2020, Feb",
