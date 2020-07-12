@@ -6,7 +6,6 @@ const Banner = ({ children, display, ...rest }) => {
     <Flex
       minW="100vw"
       minH={display === "half" ? "50vh" : "100vh"}
-      justifyContent="center"
       flexDir={["column", "row"]}
       bg="white"
       color="black"

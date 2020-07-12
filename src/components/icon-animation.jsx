@@ -48,6 +48,7 @@ const IconAnimation = () => {
             whileHover={{
               color,
             }}
+            color="primary.lightBlack"
           >
             <Box as={icon} fontSize="6xl" />
           </MotionLi>

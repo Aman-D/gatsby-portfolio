@@ -5,7 +5,7 @@ const Navigate = () => {
   const MotionMenuButton = motion.custom(MenuButton)
   return (
     <Menu>
-      <MotionMenuButton
+      <MenuButton
         as={Button}
         rightIcon="chevron-down"
         position="fixed"
@@ -15,18 +15,10 @@ const Navigate = () => {
         letterSpacing="wider"
         transformOrigin="top left"
         _hover={{}}
-        initial={{
-          rotateZ: -90,
-        }}
-        drag="y"
-        dragConstraints={{
-          top: 0,
-          bottom: 400,
-        }}
-        whileHover={{}}
+        zIndex="overlay"
       >
         Navigate To
-      </MotionMenuButton>
+      </MenuButton>
       <MenuList bg="primary.lightBlack">
         <MenuItem>Intro</MenuItem>
         <MenuItem>Testimonial</MenuItem>

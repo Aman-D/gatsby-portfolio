@@ -1,6 +1,18 @@
 import React from "react"
-import { Banner, Layout, Hero, IconAnimation } from "../components/index"
-import { Text } from "@chakra-ui/core"
+import {
+  Banner,
+  Layout,
+  Hero,
+  IconAnimation,
+  Testimonial,
+  Profession,
+  Skills,
+  Experience,
+  Projects,
+} from "../components/index"
+import { Text, Box, Flex, Image } from "@chakra-ui/core"
+import { List, ListItem, ListIcon } from "@chakra-ui/core"
+import "../css/index.css"
 
 const Index = () => {
   return (
@@ -19,8 +31,111 @@ const Index = () => {
         </Hero>
         <IconAnimation />
       </Banner>
-      {/* Intro part ends here*/}
-      {/* Intro part starts here*/} {/* Intro part starts here*/}
+
+      {/* Expertise part here*/}
+      <Banner position="relative" flexDir="column" p={[4, 20]}>
+        <Text
+          textAlign="center"
+          zIndex="tooltip"
+          fontSize={["4xl", "6xl"]}
+          my={10}
+        >
+          My Expertise in..
+        </Text>
+        <Flex flexDir={["column", "row"]}>
+          <Flex flexDir="column" p={[4, 5]} fontSize="lg">
+            <Text fontSize="xl" textAlign="center" mb={5} fontWeight="bolder">
+              Front End Development
+            </Text>
+            <Skills
+              skills={[
+                "Professional Level experience in React",
+                "Good understanding of Redux, React Hooks and Context Api ",
+                "Worked on Gatsby to create static page websites",
+                "Good with CSS, SASS, Styled-Components",
+                "Have worked on GSAP and Framer Motion for animations",
+              ]}
+            />
+          </Flex>
+          <Flex flexDir="column" p={[4, 5]} fontSize="lg">
+            <Text fontSize="xl" textAlign="center" mb={5} fontWeight="bolder">
+              Back End Development
+            </Text>
+            <Skills
+              skills={[
+                "Hands on experience on Node and Django",
+                "Have worked on EJS template",
+                "Good understanding of MongoDb and SQL",
+                "Can make good RESTful APIs and also have knowledge of GraphQl",
+                "Have a good understanding of Database modelling.",
+              ]}
+            />
+          </Flex>
+          <Flex flexDir="column" p={[4, 5]} fontSize="lg">
+            <Text fontSize="xl" textAlign="center" mb={5} fontWeight="bolder">
+              Full Stack Development
+            </Text>
+            <Skills
+              skills={[
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              ]}
+            />
+          </Flex>
+        </Flex>
+        {/* <Box
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          zIndex="base"
+          bg="primary.lightBlack"
+        /> */}
+      </Banner>
+
+      {/* Experience part here*/}
+      <Banner position="relative" flexDir="column" p={[5, 32]}>
+        <Text
+          textAlign="center"
+          color="primary.black"
+          fontSize={["4xl", "6xl"]}
+          my={10}
+        >
+          Experience
+        </Text>
+        <Experience />
+      </Banner>
+
+      {/* Projects part here*/}
+      <Banner position="relative" flexDir="column" p={[5, 32]}>
+        <Text
+          textAlign="center"
+          color="primary.black"
+          fontSize={["4xl", "6xl"]}
+          my={10}
+        >
+          My Projects
+        </Text>
+        <Projects />
+      </Banner>
+
+      {/* Testimonial starts here*/}
+      <Banner
+        position="relative"
+        alignItems="center"
+        flexDir="column"
+        display="half"
+        p={[4, 32]}
+        bg="primary.lightBlack"
+      >
+        <Text zIndex="tooltip" color="white" fontSize={["4xl", "6xl"]} my={10}>
+          Testimonial
+        </Text>
+        <Testimonial />
+      </Banner>
     </Layout>
   )
 }

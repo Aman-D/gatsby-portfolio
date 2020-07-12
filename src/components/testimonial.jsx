@@ -33,6 +33,14 @@ const Testimonial = ({ children, ...rest }) => {
               minW={["320 !important", "420px !important"]}
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
+              drag="x"
+              onDrag={(event, info) => {
+                info && info.point.x < 0 ? next() : prev()
+              }}
+              dragConstraints={{ left: -1, right: 1 }}
+              cursor="grab"
+              bg="primary.lightBlack"
+              color="white"
               {...rest}
             >
               <Image
@@ -53,7 +61,21 @@ const Testimonial = ({ children, ...rest }) => {
             </MotionCard>
           )
         })}
-        <Box
+        <Flex>
+          {testimonial.map(({ id, index }) => (
+            <Box
+              key={id}
+              onClick={() => setIndex(id - 1)}
+              border={id - 1 === tabIndex ? "2px solid #000" : ""}
+              size={[3, 4]}
+              bg={id - 1 === tabIndex ? "gray.600" : "gray.100"}
+              borderRadius="50%"
+              m={4}
+              _hover={{ bg: "blue.300" }}
+            />
+          ))}
+        </Flex>
+        {/* <Box
           as={MdNavigateBefore}
           onClick={prev}
           boxShadow="md"
@@ -78,7 +100,7 @@ const Testimonial = ({ children, ...rest }) => {
           transform="translate(15%,-50%)"
           bg="#413A42"
           color="white"
-        />
+        /> */}
       </>
     </Box>
   )
