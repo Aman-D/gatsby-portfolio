@@ -55,12 +55,14 @@ const Experience = () => {
               boxShadow="lg"
               minH="430px"
             >
-              <Box w="100%" p={[5, 10]}>
+              <Flex direction="column" w="100%" p={[5, 10]}>
                 <Text fontSize="2xl">{exp.title}</Text>
                 <Text fontSize="sm" my={1}>
                   {exp.startDate} - {exp.endDate}
                 </Text>
-                <Text fontSize="md">{exp.body}</Text>
+                <Text fontSize="md" flexGrow="1">
+                  {exp.body}
+                </Text>
                 <Divider bg="gray.100" />
                 <Flex flexWrap="wrap">
                   <Tag title="React" />
@@ -79,7 +81,7 @@ const Experience = () => {
                     <Button leftIcon={GrGithub}>More</Button>
                   </Link>
                 </Flex>
-              </Box>
+              </Flex>
               <Flex
                 display={["none", "flex"]}
                 w="100%"

@@ -28,41 +28,41 @@ module.exports = {
       },
     },
     `gatsby-plugin-chakra-ui`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/content/pages/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projects`,
-        path: `${__dirname}/content/projects/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blogs`,
-        path: `${__dirname}/content/blogs/`,
-      },
-    },
-    `gatsby-remark-images`,
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1035,
-              sizeByPixelDensity: true,
-            },
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `pages`,
+    //     path: `${__dirname}/content/pages/`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `projects`,
+    //     path: `${__dirname}/content/projects/`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `blogs`,
+    //     path: `${__dirname}/content/blogs/`,
+    //   },
+    // },
+    // `gatsby-remark-images`,
+    // {
+    //   resolve: `gatsby-plugin-mdx`,
+    //   options: {
+    //     gatsbyRemarkPlugins: [
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 1035,
+    //           sizeByPixelDensity: true,
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
   ],
 }

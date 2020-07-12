@@ -1,16 +1,15 @@
 import React from "react"
 import { Flex } from "@chakra-ui/core"
-import { MDXProvider } from "@mdx-js/react"
-import { Text } from "@chakra-ui/core"
 
 const Banner = ({ children, display, ...rest }) => {
   return (
     <Flex
+      minW="100vw"
       minH={display === "half" ? "50vh" : "100vh"}
-      alignItems="center"
       justifyContent="center"
       flexDir={["column", "row"]}
-      bg="primary.background"
+      bg="white"
+      color="black"
       {...rest}
     >
       {children}
