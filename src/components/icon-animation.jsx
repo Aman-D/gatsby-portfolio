@@ -18,39 +18,42 @@ const IconAnimation = () => {
   const MotionLi = motion.custom(ListItem)
 
   useEffect(() => {
-    setTimeout(() => setColors(shuffle(colors)), 1000)
-  }, [colors])
+    var timeout = setTimeout(() => setColors(shuffle(colors)), 1800)
+    return clearTimeout(timeout)
+  }, [colors, setColors])
 
   return (
-    <List
-      display={["none", "flex"]}
-      pos="relative"
-      w="320px"
-      flexWrap="wrap"
-      justifyContent="center"
-      alignItems="center"
-    >
-      {colors.map(({ icon, color }, index) => (
-        <MotionLi
-          key={index}
-          layoutTransition={spring}
-          style={{
-            borderRadius: "10px",
-            marginBottom: "10px",
-            marginRight: "10px",
-            width: "140px",
-            height: "140px",
-            display: "grid",
-            placeItems: "center",
-          }}
-          whileHover={{
-            color,
-          }}
-        >
-          <Box as={icon} fontSize="6xl" />
-        </MotionLi>
-      ))}
-    </List>
+    <Box>
+      <List
+        display={["none", "flex"]}
+        pos="relative"
+        w="320px"
+        flexWrap="wrap"
+        justifyContent="center"
+        alignItems="center"
+      >
+        {colors.map(({ icon, color }, index) => (
+          <MotionLi
+            key={index}
+            layoutTransition={spring}
+            style={{
+              borderRadius: "10px",
+              marginBottom: "10px",
+              marginRight: "10px",
+              width: "140px",
+              height: "140px",
+              display: "grid",
+              placeItems: "center",
+            }}
+            whileHover={{
+              color,
+            }}
+          >
+            <Box as={icon} fontSize="6xl" />
+          </MotionLi>
+        ))}
+      </List>
+    </Box>
   )
 }
 const initialColors = [

@@ -1,6 +1,6 @@
 import React from "react"
 import { ThemeProvider, CSSReset } from "@chakra-ui/core"
-import Header from "./header"
+import { Header, Navigate } from "./index"
 import { theme } from "../theme"
 
 const Layout = ({ children }) => {
@@ -9,7 +9,8 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={theme}>
         <CSSReset />
         <Header />
-        {children}
+        <Navigate />
+        <main>{children}</main>
       </ThemeProvider>
     </>
   )

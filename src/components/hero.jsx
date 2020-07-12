@@ -4,8 +4,9 @@ const Hero = ({ children, ...rest }) => {
   return (
     <Flex
       flexDirection="column"
-      px={[10, 32]}
       justifyContent="center"
+      alignItems="center"
+      p={[4, 32]}
       {...rest}
     >
       {children}

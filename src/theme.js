@@ -1,5 +1,5 @@
 import { theme as baseTheme } from "@chakra-ui/core"
-
+console.log(baseTheme)
 export const theme = {
   ...baseTheme,
   colors: {
