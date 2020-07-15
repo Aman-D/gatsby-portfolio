@@ -54,6 +54,7 @@ const Experience = () => {
               dragConstraints={{ left: -1, right: 1 }}
               boxShadow="lg"
               minH="430px"
+              bg="white"
             >
               <Flex direction="column" w="100%" p={[5, 10]}>
                 <Text fontSize="2xl">{exp.title}</Text>

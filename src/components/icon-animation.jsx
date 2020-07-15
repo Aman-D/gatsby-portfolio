@@ -19,7 +19,6 @@ const IconAnimation = () => {
 
   useEffect(() => {
     var timeout = setTimeout(() => setColors(shuffle(colors)), 1800)
-    return clearTimeout(timeout)
   }, [colors, setColors])
 
   return (
@@ -27,10 +26,11 @@ const IconAnimation = () => {
       <List
         display={["none", "flex"]}
         pos="relative"
-        w="320px"
+        minW="320px !important"
         flexWrap="wrap"
         justifyContent="center"
         alignItems="center"
+        px={10}
       >
         {colors.map(({ icon, color }, index) => (
           <MotionLi

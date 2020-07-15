@@ -18,7 +18,14 @@ const Index = () => {
   return (
     <Layout>
       {/* Intro part starts here*/}
-      <Banner id="home" justifyContent="center" alignItems="center" p={[6, 30]}>
+      <Banner
+        id="home"
+        position="relative"
+        justifyContent="center"
+        alignItems="center"
+        p={[6, 30]}
+        bg="primary.lightBlack"
+      >
         <Hero>
           <Text fontSize="xl">
             Hello! <br /> I am a{" "}
@@ -38,19 +45,35 @@ const Index = () => {
           </Flex>
         </Hero>
         <IconAnimation />
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          zIndex="hide"
+          bg="white"
+          className="banner"
+        />
       </Banner>
 
       {/* Expertise part here*/}
-      <Banner position="relative" flexDir="column" p={[4, 20]}>
+      <Banner
+        bg="primary.lightBlack"
+        position="relative"
+        flexDir="column"
+        p={[4, 20]}
+      >
         <Text
           textAlign="center"
           zIndex="tooltip"
           fontSize={["4xl", "6xl"]}
           my={10}
+          color="white"
         >
           My Expertise in..
         </Text>
-        <Flex flexDir={["column", "row"]}>
+        <Flex flexDir={["column", "row"]} color="white">
           <Flex flexDir="column" p={[4, 5]} fontSize="lg">
             <Text fontSize="xl" textAlign="center" mb={5} fontWeight="bolder">
               Front End Development
@@ -108,13 +131,23 @@ const Index = () => {
       <Banner position="relative" flexDir="column" p={[5, 32]}>
         <Text
           textAlign="center"
-          color="primary.black"
+          color="white"
           fontSize={["4xl", "6xl"]}
           my={10}
         >
           Experience
         </Text>
         <Experience />
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          zIndex="hide"
+          bg="primary.lightBlack"
+          className="experience"
+        />
       </Banner>
 
       {/* Projects part here*/}
@@ -128,6 +161,16 @@ const Index = () => {
           My Projects
         </Text>
         <Projects />
+        {/* <Box
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          zIndex="hide"
+          bg="primary.lightBlack"
+          className="projects"
+        /> */}
       </Banner>
 
       {/* Testimonial starts here*/}

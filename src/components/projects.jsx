@@ -15,6 +15,7 @@ const Projects = () => {
           boxShadow="lg"
           key={index}
           p={5}
+          bg="white"
         >
           <Box>
             <Image scr="" fallbackSrc="https://via.placeholder.com/150" />

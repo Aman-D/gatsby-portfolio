@@ -9,6 +9,7 @@ const Banner = ({ children, display, ...rest }) => {
       flexDir={["column", "row"]}
       bg="white"
       color="black"
+      zIndex="overlay"
       {...rest}
     >
       {children}

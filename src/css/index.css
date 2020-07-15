@@ -1,0 +1,18 @@
+.experience {
+  clip-path: ellipse(67% 40% at 51% 0%);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.projects {
+  clip-path: polygon(100% 0, 100% 21%, 0 0);
+}
+
+.banner {
+  clip-path: inset(5% 4% 6% 4%);
+  background-color: "white";
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
