@@ -10,7 +10,7 @@ import {
   Experience,
   Projects,
 } from "../components/index"
-import { Text, Box, Flex, Image } from "@chakra-ui/core"
+import { Text, Box, Flex, Image, Button, Link, Icon } from "@chakra-ui/core"
 import { List, ListItem, ListIcon } from "@chakra-ui/core"
 import "../css/index.css"
 
@@ -28,6 +28,14 @@ const Index = () => {
             . I love making web applcations with main focus on performance,
             optimization, creativity and robustness.
           </Text>
+          <Flex alignSelf="start" alignItems="center" my={4}>
+            <Button bg="primary.lightBlack" color="white" size="sm" _hover={{}}>
+              Resume
+            </Button>
+            <Link href="#" mx={3}>
+              Contact Me <Icon name="external-link" />
+            </Link>
+          </Flex>
         </Hero>
         <IconAnimation />
       </Banner>
@@ -63,7 +71,7 @@ const Index = () => {
             </Text>
             <Skills
               skills={[
-                "Hands on experience on Node and Django",
+                `Hands on experience on Node and Django`,
                 "Have worked on EJS template",
                 "Good understanding of MongoDb and SQL",
                 "Can make good RESTful APIs and also have knowledge of GraphQl",
