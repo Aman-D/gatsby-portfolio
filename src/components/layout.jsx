@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={theme}>
         <CSSReset />
         <Header />
+        <Navigate />
         <main>{children}</main>
       </ThemeProvider>
     </>

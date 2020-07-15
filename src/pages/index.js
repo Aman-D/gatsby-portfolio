@@ -23,7 +23,7 @@ const Index = () => {
         position="relative"
         justifyContent="center"
         alignItems="center"
-        p={[6, 30]}
+        p={[4, 30]}
         bg="primary.lightBlack"
       >
         <Hero>
@@ -59,6 +59,7 @@ const Index = () => {
 
       {/* Expertise part here*/}
       <Banner
+        id="expertise"
         bg="primary.lightBlack"
         position="relative"
         flexDir="column"
@@ -128,7 +129,7 @@ const Index = () => {
       </Banner>
 
       {/* Experience part here*/}
-      <Banner position="relative" flexDir="column" p={[5, 32]}>
+      <Banner id="experience" position="relative" flexDir="column" p={[5, 32]}>
         <Text
           textAlign="center"
           color="white"
@@ -151,7 +152,7 @@ const Index = () => {
       </Banner>
 
       {/* Projects part here*/}
-      <Banner position="relative" flexDir="column" p={[5, 32]}>
+      <Banner id="projects" position="relative" flexDir="column" p={[5, 32]}>
         <Text
           textAlign="center"
           color="primary.black"
