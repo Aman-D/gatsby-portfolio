@@ -7,7 +7,6 @@ sections:
 - type: document
   path: src/pages/md.mdx
   label: md
-  match: "**/*"
 - type: directory
   path: ''
   label: SRC
